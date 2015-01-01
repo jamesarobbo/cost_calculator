@@ -14,25 +14,40 @@
 <div class="row new">
 <div>
   <div class="large-6 large-offset-3 columns button new-button">
-    <%= link_to "New activity", new_user_activity_path %>
+    <%= link_to "New Activity", new_user_activity_path %>
   </div>
 </div>
 </div>
 
+
+
 <div class="row">
+  <div class="large-6 large-offset-3 columns large-uncentered totals">
+
+    <div class="large-6 columns count">
+      <h4>Activities<br>
+      <%= @activities.count %>
+      </h4>
+    </div>
+    <div class="large-6 columns sum">
+      <h4>Total Cost<br>
+      <%= number_to_currency Activity.overall_cost(@activities), unit: "£" %>
+      </h4>
+    </div>
 
 
+  </div>
+
+  
+</div>
+
+<div class="row activities">
   <% @activities.each do |activity| %>
     <div class="large-6 large-offset-3 columns large-uncentered activity-list"> 
       <h3><%= link_to activity.title, user_activity_path(activity.user_id, activity) %></h3>
 
     </div>
-<div class="large-6 large-offset-3 columns large-uncentered activity-list">
-    <h4> <%= number_to_currency Activity.total_cost(activity), unit: "£" %></h4>
-     </div>
+
   <% end %>
-
-
-
 </div>
 

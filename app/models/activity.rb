@@ -12,4 +12,14 @@ class Activity < ActiveRecord::Base
     total.sum
     
   end
+
+  def self.overall_cost(activities)
+
+    a = activities.each.collect{|x| x.items}
+    b = a.flatten
+    c = b.collect do |k, v|
+          k[:cost]
+        end
+    c.sum      
+  end
 end

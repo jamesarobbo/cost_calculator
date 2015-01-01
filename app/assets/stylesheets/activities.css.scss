@@ -17,6 +17,27 @@ h2, h4{
   
 }
 
+.button.new-button {
+  margin-top: 20px;
+}
+
+.totals {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+
+  .count{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+   
+
+  }
+  .sum{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    
+  }
+}
+
 .form-wrapper {
   padding: 20px;
   box-shadow: 0px 0px 1px #888888;
@@ -73,22 +94,25 @@ form {
   }
 } 
 
+.row.activities {
+  margin-bottom: 50px;
 
   .activity-list{
     padding-left:0 !important;
     padding-right:0 !important;
     margin-top: 10px;
-    box-shadow: 0px 0px 1px #888888;
+    
     z-index: 10;
-    background-color:#fff;
+    background-color:#ecf0f1;
     a{
       display:block;
       text-align: center;
       padding:40px;
+      color:#333;
 
     }
   }
- 
+}
 
 
 
