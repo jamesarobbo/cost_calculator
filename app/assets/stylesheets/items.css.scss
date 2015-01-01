@@ -1,0 +1,27 @@
+form{
+  .cost{
+    padding-right:0;
+    padding-left: 0;
+  }
+  .name {
+    padding-left: 0;
+  }
+}
+
+.item-list{
+  margin-top: 20px;
+  table {
+    width:100%;
+  }
+}
+
+.total {
+  text-align: center;
+  margin-bottom: 50px;
+  > div{
+    background-color: #9b59b6;
+    padding:20px;
+    color:#fff;
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,4 @@
+$("#item-list").last('tr').after('<%= escape_javascript(render partial: "activities/item", :locals => { :item => @item }) %>');
+$("#new_item input[type=text], #new_item input[type=number] ").val('');
+
+$("#total").html('<%= escape_javascript(render partial: "activities/totalcost") %>');

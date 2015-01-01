@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cost Planner</title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <%= yield :body || "<body>" %>
+
+  <nav class="top-bar" data-topbar role="navigation" data-options="is_hover: false" >
+    <ul class="title-area">
+      <li class="name">
+        <h1><%= link_to "Cost Planner", root_path %></h1>
+      </li>
+    </ul>
+    <section class="top-bar-section">
+      <ul class="right">
+      <li class="has-dropdown">
+        <% if current_user %>
+          <a href="#"><%= current_user.username %></a>
+          <ul class="dropdown">
+            <li><%= link_to "My Activities", user_activities_path(current_user)  %></li>
+            <li><%= link_to "Log out", '/session', :method => :delete %></li>
+          </ul>  
+        <% else %>
+          <%= link_to "Log in", new_session_path %>
+        <% end %>
+      </li>
+      </ul>
+    </section>
+  </nav>
+
+
+    <%= yield %>
+
+  </body>
+</html>

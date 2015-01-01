@@ -1,0 +1,25 @@
+<% content_for :body do %>
+  <body id='activity-new'>
+<% end %>
+
+<div class="row">
+  <div class="large-6 large-offset-3 columns form-wrapper">
+  
+    <%= simple_form_for @activity, url: user_activities_path, method: :post do |f| %>
+      <%= f.input :title, required: false %>
+      <%= f.input :activity_begin, as: :string, label: "Start Date", input_html: { class: 'datepicker' },
+      :wrapper_html => { class: 'large-6 columns date-start' }   %>
+      <%= f.input :activity_end, as: :string, label: "End Date", input_html: { class: 'datepicker' }, 
+      :wrapper_html => { class: 'large-6 columns date-end' } %>
+      <%= f.submit class: 'large-12 columns button'  %>
+    <% end %>
+    
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-6 large-offset-3 columns information">
+    <p>Create a new activity by filling out the form above. Start and end dates aren't required.</p>
+  </div>
+  
+</div>

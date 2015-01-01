@@ -1,0 +1,52 @@
+<div class="row">
+  <div class="large-12 columns head">
+    
+    <h2><%= @activity.title %></h2>
+    
+    <h4><%= @activity.activity_begin %>
+      <% if @activity.activity_end.present? %>
+       <strong>to</strong> <%= @activity.activity_end   %>
+      <% end %>
+    </h4>
+
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-6 large-offset-3 columns">
+    <h5>Add items and their individual cost to your activity and we'll calculate the running total for you.</h5>
+  </div>  
+</div>
+
+
+<div class="row">
+  <div class="large-6 large-offset-3 columns">
+
+    <%= render 'form' %>
+
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-6 large-offset-3 columns item-list">
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Cost</th>
+        </tr>
+      </thead>
+      <tbody id="item-list">
+       <% @items.each do |item| %>
+         <%= render 'item', item: item %>
+       <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="row">
+  <div id = "total" class="large-6 large-offset-3 columns total">
+    <%= render 'totalcost' %>
+  </div>
+</div>
+

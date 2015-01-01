@@ -1,0 +1,7 @@
+<%= simple_form_for [@activity, @new_item], url: user_activity_items_path(@activity.user_id, @activity), remote: true do |f| %>
+
+<%= f.input :name, required: false, :wrapper_html => { class: 'large-8 columns name' } %>
+<%= f.input :cost, required: false, :wrapper_html => { class: 'large-4 columns cost' } %>
+
+<%= f.submit "Add Item", class: 'large-4 columns button' %>
+<% end %>

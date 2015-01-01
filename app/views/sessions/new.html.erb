@@ -1,0 +1,18 @@
+<% content_for :body do %>
+  <body id='user-login'>
+<% end %>
+
+
+<div class="row">
+  <div class="large-4 large-offset-4 columns login-user">
+    <h2>Log in</h2>
+    <%= simple_form_for :login, url: session_path do |f| %>
+
+      <%= f.input :username %>
+      <%= f.input :password %>
+      <%= f.submit "Log in", class: "button" %>
+
+    <% end %>
+
+  </div>
+</div>

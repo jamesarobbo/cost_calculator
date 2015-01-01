@@ -1,0 +1,21 @@
+<% content_for :body do %>
+  <body id='user-new'>
+<% end %>
+
+<div class="row">
+  <div class="large-4 large-offset-4 columns new-user">
+    <h2>New Account</h2>
+
+    <%= simple_form_for @user do |f| %>
+
+      <%= f.input :username %>
+      <%= f.input :email %>
+      <%= f.input :password %>
+      <%= f.input :password_confirmation %>
+      <%= f.submit "Create Account", class: "button" %>
+      
+    <% end %>
+  </div>  
+
+</div>
+
