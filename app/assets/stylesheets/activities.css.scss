@@ -21,6 +21,36 @@ h2, h4{
   margin-top: 20px;
 }
 
+.edit, .delete{
+  text-align: center;
+  
+  a, a:hover{
+    display: block;
+    color:#fff;
+    padding:10px;
+    font-weight: bold;
+    
+  }
+}
+
+.edit{
+  padding-left:0 !important;
+ a{
+    background-color:#3498db;
+  }
+}
+
+.delete {
+  padding-right:0 !important;
+  a{
+    background-color:#e74c3c;
+  }
+}
+
+.info {
+  margin-top: 20px;
+}
+
 .totals {
   padding-left: 0 !important;
   padding-right: 0 !important;

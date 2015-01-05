@@ -28,6 +28,25 @@ class ActivitiesController < ApplicationController
     end    
   end
 
+  def edit
+
+    @activity = Activity.find(params[:id])
+
+  end
+
+  def update
+
+    @activity = Activity.find(params[:id])
+    if @activity.update(activity_params)
+
+      redirect_to user_activity_path(@activity.user_id, @activity)
+    else
+    
+      render 'edit'
+    end    
+    
+  end
+
   def destroy
 
     @activity = Activity.find(params[:id])
@@ -37,6 +56,7 @@ class ActivitiesController < ApplicationController
     redirect_to user_activities_path(current_user)
     
   end
+
 
   def activity_params
     params.require(:activity).permit(:title, :activity_begin, :activity_end)

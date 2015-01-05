@@ -1,4 +1,7 @@
+<% activity = item.activity %>
+<% user = activity.user_id %>
 <tr>
   <td><%= item.name %></td>
   <td><%= item.cost %></td>
+  <td style ="text-align:center"><%= link_to "Delete", user_activity_item_path(user, activity, item), method: :delete, class: "item-delete", remote: true %></td>
 </tr> 

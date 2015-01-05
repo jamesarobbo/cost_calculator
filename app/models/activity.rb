@@ -4,7 +4,6 @@ class Activity < ActiveRecord::Base
 
   validates_presence_of :title
 
-
   def self.total_cost(activity)
    
     t = activity.items.collect{|x| x.cost}

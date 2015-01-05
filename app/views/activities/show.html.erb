@@ -8,12 +8,19 @@
        <strong>to</strong> <%= @activity.activity_end   %>
       <% end %>
     </h4>
-
   </div>
 </div>
 
 <div class="row">
   <div class="large-6 large-offset-3 columns">
+    <div class="large-6 columns edit"><%= link_to "Edit", edit_user_activity_path(@activity.user_id, @activity) %></div>
+    <div class="large-6 columns delete"><%= link_to "Delete", user_activity_path(@activity.user_id, @activity), method: :delete, data: {"confirm" => "Are you sure you want to delete this activity?"} %>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-6 large-offset-3 columns info">
     <h5>Add items and their individual cost to your activity and we'll calculate the running total for you.</h5>
   </div>  
 </div>
@@ -40,6 +47,7 @@
         <tr>
           <th>Name</th>
           <th>Cost</th>
+          <th></th>
         </tr>
       </thead>
       <tbody id="item-list">
@@ -50,5 +58,4 @@
     </table>
   </div>
 </div>
-
 

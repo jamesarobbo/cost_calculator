@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="large-6 large-offset-3 columns form-wrapper">
+  
+    <%= simple_form_for @activity, url: user_activity_path, method: :put do |f| %>
+      <%= f.input :title, required: false %>
+      <%= f.input :activity_begin, as: :string, label: "Start Date", input_html: { class: 'datepicker' },
+      :wrapper_html => { class: 'large-6 columns date-start' }   %>
+      <%= f.input :activity_end, as: :string, label: "End Date", input_html: { class: 'datepicker' }, 
+      :wrapper_html => { class: 'large-6 columns date-end' } %>
+
+      <%= f.submit class: 'large-12 columns button'  %>
+    <% end %>
+    
+  </div>
+</div>
